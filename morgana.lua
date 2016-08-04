@@ -21,7 +21,7 @@ MorgMenu.Combo:Boolean("R", "Use R", true)						--Add a button to toggle the usa
 MorgMenu.Combo:Boolean("KSW", "Killsteal with W", true)		    --Add a button to killsteal with W
 
 local MorgQ = {delay = 0.25, range = 1175, radius = 65, speed = 1200}	--Table for Morg Q
-local MorgW = {delay = 0.5, range = 900, radius = 225, speed = math.huge}	--TABLE for Morg W
+local MorgW = {delay = 0.25, range = 900, radius = 225, speed = math.huge}	--TABLE for Morg W
 
 OnTick(function(myHero)
 	local target = GetCurrentTarget()
@@ -47,3 +47,4 @@ OnTick(function(myHero)
 			]]
 			local targetPos = GetOrigin(target)		--saves the XYZ coordinates of the target to the variable
 			CastSkillShot(_W , targetPos)			--Since the W is a skillshot (select area), we have to cast it at a point on the ground (targetPos)
+		end		--Ends the W logic
