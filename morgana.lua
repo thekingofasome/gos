@@ -31,5 +31,3 @@ OnTick(function ()									--The code inside the Function runs every tick
 	
 		local target = GetCurrentTarget()			--Saves the "best" enemy champ to the target variable
 		
-
-end)
