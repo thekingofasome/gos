@@ -32,8 +32,14 @@ OnTick(function(myHero)
 
 		if MorgMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1175) then
 		--[[
-				AnnieMenu.Combo.Q:Value() returns true if the menu has been ticked
+				MorgMenu.Combo.Q:Value() returns true if the menu has been ticked
 				Ready(_Q) returns true if we are able to cast Q now
-				ValidTarget(target, 625) returns true if the target can be attacked and is in a range of 625 (Annie Q range; see wiki)
+				ValidTarget(target, 1175) returns true if the target can be attacked and is in a range of 1175 (Morg Q range)
 			]]		
-       local QPred = GetLinearAOEPrediction(unit, spellData, sourcePos)
+       local QPred = GetLinearAOEPrediction(Target, MorgQ, sourcePos)
+       if QPred.hitchance >= 0.6 
+                                   CastSkillShot(_Q, predQ.castPos)
+            end
+
+		if MorgMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 900) then
+
