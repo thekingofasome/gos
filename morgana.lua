@@ -1,6 +1,7 @@
 
 --CHAMPION
-if GetObjectName(GetMyHero()) ~= "Morgana" then return end --CHARACTER
+myHero.charName ~= "Morgana" then return end --Character
+
 
 
 --MIXLIB
