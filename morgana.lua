@@ -38,7 +38,7 @@ OnTick(function(myHero)
        local QPred = GetLinearAOEPrediction(target, MorgQ, sourcePos)
 		if QPred.hitchance >= 0.6 
                                    CastSkillShot(_Q, predQ.castPos)
-		end 	--Ends the W logic
+		end 	--Ends the Q logic
  
 		--W LOGIC
 		if MorgMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 900) then
