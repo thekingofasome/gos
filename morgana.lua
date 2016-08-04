@@ -28,6 +28,7 @@ OnTick(function(myHero)
 
 	if Mix:Mode() == "Combo" then
 
+		--Q LOGIC
 		if MorgMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1175) then
 		--[[
 				MorgMenu.Combo.Q:Value() returns true if the menu has been ticked
@@ -35,10 +36,11 @@ OnTick(function(myHero)
 				ValidTarget(target, 1175) returns true if the target can be attacked and is in a range of 1175 (Morg Q range)
 			]]		
        local QPred = GetLinearAOEPrediction(target, MorgQ, sourcePos)
-       if QPred.hitchance >= 0.6 
+		if QPred.hitchance >= 0.6 
                                    CastSkillShot(_Q, predQ.castPos)
-            end
-
+		end 	--Ends the W logic
+ 
+		--W LOGIC
 		if MorgMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 900) then
 			--[[
 				MorgMenu.Combo.W:Value() returns true if the menu has been ticked
@@ -48,3 +50,6 @@ OnTick(function(myHero)
 			local targetPos = GetOrigin(target)		--saves the XYZ coordinates of the target to the variable
 			CastSkillShot(_W , targetPos)			--Since the W is a skillshot (select area), we have to cast it at a point on the ground (targetPos)
 		end		--Ends the W logic
+
+		--R LOGIC
+		
