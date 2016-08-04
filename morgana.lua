@@ -13,7 +13,7 @@ end
 require('OpenPredict')
 
 --MENU
-local MorgMenu = Menu("Morgana", "Morgana")						-			-Create a Menu and called MorgMenu (Users sees "Morgana")
+local MorgMenu = Menu("Morgana", "Morgana")						-			--Create a Menu and called MorgMenu (Users sees "Morgana")
 MorgMenu:SubMenu("Combo", "Combo")							    			--Create a New SubMenu and call it Combo
 MorgMenu.Combo:Boolean("Q", "Use Q", true)									--Add a button to toggle the usage of Q
 MorgMenu.Combo:Boolean("W", "Use W", true)									--Add a button to toggle the usage of W
