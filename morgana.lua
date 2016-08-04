@@ -1,5 +1,5 @@
 --CHAMPION
-myHero.charName =~ "Morgana" then return end --Character
+if myHero.charName ~= "Morgana" then return end
 
 --MIXLIB
 if FileExist(COMMON_PATH.."MixLib.lua") then --MIXLIB
