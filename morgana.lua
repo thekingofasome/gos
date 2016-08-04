@@ -1,4 +1,3 @@
-
 --CHAMPION
 myHero.charName ~= "Morgana" then return end --Character
 
@@ -22,11 +21,13 @@ MorgMenu.Combo:Boolean("Q", "Use Q", true)						--Add a button to toggle the usa
 MorgMenu.Combo:Boolean("W", "Use W", true)						--Add a button to toggle the usage of W
 MorgMenu.Combo:Boolean("R", "Use R", true)						--Add a button to toggle the usage of R
 MorgMenu.Combo:Boolean("KSW", "Killsteal with W", true)		    --Add a button to killsteal with W
+MorgMenu.Combo:Boolean("UOPQ", "Use OpenPredict for Q", true)    --PREDICTION FOR Q
+MorgMenu.Combo:Boolean("UOPW", "Use OpenPredict for W", true)    --PREDICTION FOR W
 
 local MorgQ = {delay = 0.2, range = 1175, radius = 65, speed = 1200}	--Table for Morg Q
 local MorgW = {delay = 0.5, range = 900, radius = 225, speed = 2200}	--TABLE for Morg W
 
-OnTick(function ()									--The code inside the Function runs every tick
-	
-		local target = GetCurrentTarget()			--Saves the "best" enemy champ to the target variable
-		
+OnTick(function(myHero)
+	local target = GetCurrentTarget()
+
+	if Mix:Mode() == "Combo"
