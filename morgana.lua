@@ -35,7 +35,6 @@ OnTick(function(myHero)
 				Ready(_Q) returns true if we are able to cast Q now
 				ValidTarget(target, 1175) returns true if the target can be attacked and is in a range of 1175 (Morg Q range)
 			]]		
-       local QPred = GetLinearAOEPrediction(target, MorgQ, sourcePos)
 		if QPred.hitchance >= 0.6 
                                    CastSkillShot(_Q, predQ.castPos)
 		end 	--Ends the W logic
