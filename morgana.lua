@@ -22,7 +22,7 @@ MorgMenu.Combo:Boolean("W", "Use W", true)						--Add a button to toggle the usa
 MorgMenu.Combo:Boolean("R", "Use R", true)						--Add a button to toggle the usage of R
 MorgMenu.Combo:Boolean("KSW", "Killsteal with W", true)		    --Add a button to killsteal with W
 
-local MorgQ = {delay = 0.2, range = 1175, radius = 65, speed = 1200}	--Table for Morg Q
+local MorgQ = {delay = 0.25, range = 1175, radius = 65, speed = 1200}	--Table for Morg Q
 local MorgW = {delay = 0.5, range = 900, radius = 225, speed = 2200}	--TABLE for Morg W
 
 OnTick(function(myHero)
@@ -36,7 +36,7 @@ OnTick(function(myHero)
 				Ready(_Q) returns true if we are able to cast Q now
 				ValidTarget(target, 1175) returns true if the target can be attacked and is in a range of 1175 (Morg Q range)
 			]]		
-       local QPred = GetLinearAOEPrediction(Target, MorgQ, sourcePos)
+       local QPred = GetLinearAOEPrediction(target, MorgQ, sourcePos)
        if QPred.hitchance >= 0.6 
                                    CastSkillShot(_Q, predQ.castPos)
             end
