@@ -28,4 +28,12 @@ local MorgW = {delay = 0.5, range = 900, radius = 225, speed = 2200}	--TABLE for
 OnTick(function(myHero)
 	local target = GetCurrentTarget()
 
-	if Mix:Mode() == "Combo"
+	if Mix:Mode() == "Combo" then
+
+		if MorgMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 1175) then
+		--[[
+				AnnieMenu.Combo.Q:Value() returns true if the menu has been ticked
+				Ready(_Q) returns true if we are able to cast Q now
+				ValidTarget(target, 625) returns true if the target can be attacked and is in a range of 625 (Annie Q range; see wiki)
+			]]		
+       local QPred = GetLinearAOEPrediction(unit, spellData, sourcePos)
