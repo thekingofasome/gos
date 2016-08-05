@@ -37,8 +37,8 @@ OnTick(function(myHero)
 			]]		
 		if QPred.hitchance >= 0.6 then
                                    CastSkillShot(_Q, predQ.castPos)
-		end 	--Ends the W logic
- 
+		end 	--Ends the Q logic
+ 	end
 		--W LOGIC
 		if MorgMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 900) then
 			--[[
@@ -49,7 +49,7 @@ OnTick(function(myHero)
 			local targetPos = GetOrigin(target)		--saves the XYZ coordinates of the target to the variable
 			CastSkillShot(_W , targetPos)			--Since the W is a skillshot (select area), we have to cast it at a point on the ground (targetPos)
 		end		--Ends the W logic
-
+	end
 		--R LOGIC
 		if MorgMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, 200) then		--Same check as Q/W
 					CastSpell(_R , targetPos)
