@@ -1,0 +1,712 @@
+while not getmetatable(shared) do
+  wait()
+end
+shared(script)
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+local Mouse = Player:GetMouse()
+local Player_UI = Player.PlayerGui
+local Root = Character:FindFirstChild("HumanoidRootPart")
+local Head = Character:FindFirstChild("Head")
+Head.face.Texture = "http://www.roblox.com/asset/?id=10695474"
+local Torso = Character:FindFirstChild("Torso")
+local LeftArm = Character:FindFirstChild("Left Arm")
+local RightArm = Character:FindFirstChild("Right Arm")
+local SOUNDS = Character:FindFirstChild("Sound")
+SOUNDS.Disabled = true
+local Heal = Character:FindFirstChild("Health")
+local id = "rbxassetid://"
+Heal.Disabled = true
+Torso["Left Shoulder"]:Remove()
+Torso["Right Shoulder"]:Remove()
+local newLS = Instance.new("ManualWeld", Torso)
+local newRS = Instance.new("ManualWeld", Torso)
+newLS.Name = "Left Shoulder"
+newLS.Part0 = Torso
+newLS.Part1 = LeftArm
+newRS.Name = "Right Shoulder"
+newRS.Part0 = Torso
+newRS.Part1 = RightArm
+local RightLeg = Character:FindFirstChild("Right Leg")
+local LeftLeg = Character:FindFirstChild("Left Leg")
+Character:FindFirstChild("Animate").Disabled = true
+Root.Size = Vector3.new(3, 3, 1.5)
+Head.Size = Vector3.new(3.2, 1.2, 1.2)
+Torso.Size = Vector3.new(3, 3, 1.5)
+LeftArm.Size = Vector3.new(2, 4, 2)
+RightArm.Size = LeftArm.Size
+RightLeg.Size = Vector3.new(1.4, 2.5, 1.4)
+LeftLeg.Size = RightLeg.size
+local RJ = Instance.new("Motor6D", Root)
+local NK = Instance.new("Motor6D", Torso)
+local LS = Instance.new("ManualWeld", Torso)
+local RS = Instance.new("ManualWeld", Torso)
+local RH = Instance.new("Motor6D", Torso)
+local LH = Instance.new("Motor6D", Torso)
+RJ.Name = "RootJoint"
+RJ.Part0 = Root
+RJ.Part1 = Torso
+NK.Name = "Neck"
+NK.Part0 = Torso
+NK.Part1 = Head
+LS.Name = "Left Shoulder"
+LS.Part0 = Torso
+LS.Part1 = LeftArm
+RS.Name = "Right Shoulder"
+RS.Part0 = Torso
+RS.Part1 = RightArm
+RH.Name = "Right Hip"
+RH.Part0 = Torso
+RH.Part1 = RightLeg
+LH.Name = "Left Hip"
+LH.Part0 = Torso
+LH.Part1 = LeftLeg
+local Humanoid = Character:FindFirstChild("Humanoid")
+Humanoid.MaxHealth = 1000
+Humanoid.Health = 1000000
+Humanoid.Health = 1000
+Head.Died.Looped = false
+Head.Died.Pitch = 0.3
+Head.Died.Volume = 4
+Character.Animate.Disabled = false
+Heal.Disabled = false
+SOUNDS.Disabled = false
+local Reset = Instance.new("ScreenGui", Player_UI)
+local Freame = Instance.new("Frame", Reset)
+local Suiscide = Instance.new("TextButton", Freame)
+Reset.Name = "Reset"
+Freame.Position = UDim2.new(0.5, 0, 0.65, 0)
+Freame.Size = UDim2.new(0, 100, 0, 100)
+Freame.Style = Enum.FrameStyle.DropShadow
+Freame.ZIndex = 2
+Suiscide.Position = UDim2.new(0, 0, 0, 0)
+Suiscide.Size = UDim2.new(0, 85, 0.4, 50)
+Suiscide.Style = Enum.ButtonStyle.RobloxRoundButton
+Suiscide.ZIndex = 3
+Suiscide.Text = "Suiscide"
+Suiscide.TextColor3 = Color3.new(255, 255, 255)
+Suiscide.TextStrokeTransparency = 0
+local Holiday_nin_left_leg = Instance.new("CharacterMesh", Character)
+local Holiday_nin_Right_leg = Instance.new("CharacterMesh", Character)
+local Superhero_left_arm = Instance.new("CharacterMesh", Character)
+local Superhero_right_arm = Instance.new("CharacterMesh", Character)
+local Superhero_torso = Instance.new("CharacterMesh", Character)
+local SmashinClub = Instance.new("Part", Character)
+local SmashClubMesh = Instance.new("SpecialMesh", SmashinClub)
+SmashinClub.Name = "Club of " .. Player.Name
+SmashinClub.BrickColor = BrickColor.new("Dark orange")
+SmashinClub.Material = Enum.Material.Plastic
+SmashinClub.Locked = true
+SmashinClub.CanCollide = false
+SmashinClub.Size = Vector3.new(0.5, 0.5, 3.9)
+SmashinClub.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashinClub.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashinClub.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashinClub.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashinClub.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashinClub.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+SmashClubMesh.MeshId = "http://www.roblox.com/asset/?id=12215504"
+SmashClubMesh.TextureId = "http://www.roblox.com/asset/?id=12215477"
+SmashClubMesh.Scale = Vector3.new(2, 2, 1.5)
+Holiday_nin_left_leg.BodyPart = Enum.BodyPart.LeftLeg
+Holiday_nin_left_leg.MeshId = 67291594
+Holiday_nin_left_leg.Name = "Holiday_nin_left_leg"
+Holiday_nin_left_leg.OverlayTextureId = 67291552
+Holiday_nin_Right_leg.BodyPart = Enum.BodyPart.RightLeg
+Holiday_nin_Right_leg.MeshId = 67291609
+Holiday_nin_Right_leg.Name = "Holiday_nin_Right_leg"
+Holiday_nin_Right_leg.OverlayTextureId = 67291552
+Superhero_left_arm.BodyPart = Enum.BodyPart.LeftArm
+Superhero_left_arm.MeshId = 32328397
+Superhero_left_arm.Name = "Superhero_left_arm"
+Superhero_left_arm.OverlayTextureId = 0
+Superhero_right_arm.BodyPart = Enum.BodyPart.RightArm
+Superhero_right_arm.MeshId = 32328563
+Superhero_right_arm.Name = "Superhero_right_arm"
+Superhero_right_arm.OverlayTextureId = 0
+Superhero_torso.BodyPart = Enum.BodyPart.Torso
+Superhero_torso.MeshId = 32328670
+Superhero_torso.Name = "Superhero_torso"
+Superhero_torso.OverlayTextureId = 0
+Head.BrickColor = BrickColor.new("Lime green")
+Torso.BrickColor = BrickColor.new("Lime green")
+RightArm.BrickColor = BrickColor.new("Lime green")
+RightLeg.BrickColor = BrickColor.new("Lime green")
+LeftLeg.BrickColor = BrickColor.new("Lime green")
+LeftArm.BrickColor = BrickColor.new("Lime green")
+Character.Shirt.ShirtTemplate = "http://www.roblox.com/asset/?id=218180680"
+local CB = Instance.new("Motor6D", Torso)
+CB.Part0 = RightArm
+CB.Part1 = SmashinClub
+Walk = false
+Idle = false
+Jump = false
+Fall = false
+Swim = false
+Stun = false
+AttackPress = false
+AttackClick = false
+attack1anim = false
+attack2anim = false
+ShieldAnim = false
+GobackAnim = false
+SmackGroundAnim = false
+game:GetService("RunService").RenderStepped:connect(function()
+  if Walk then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, -0.00418101763, 0.167841673, 1, 0, 0, 0, 0.999248922, -0.0387498289, 0, 0.0387498289, 0.999248922), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 1, 0, 0, 0, 0.997220516, -0.0745066181, 0, 0.0745066181, 0.997220516), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 0.985627413, -0.16893369, 0, 0.16893369, 0.985627413, 0, 0, 0, 1), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 0, 0.982629895, 0.185576007, 0, -0.185576007, 0.982629895, 0, 0, 0, 1), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999998003, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000012, 0.0999998078, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003695, -0.0500001907, -2.25000024, 0.961399913, -4.15472208E-8, 0.275154799, 0, -1, -1.50995803E-7, 0.275154799, 1.45167348E-7, -0.961399913), 0.1)
+  end
+  if Idle then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 0.984807789, 0, 0.17364797, 0, 1, 0, -0.17364797, 0, 0.984807789), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 0.98480773, 0, -0.173648179, 0, 1, 0, 0.173648179, 0, 0.98480773), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 0.993278503, -0.115748964, 0, 0.115748964, 0.993278503, 0, 0, 0, 1), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1.00000012, 1.10000014, 2.38418579E-7, 0.232076347, -0.222876102, 0.946819305, -0.883358359, 0.359208465, 0.301077098, -0.407208443, -0.906253457, -0.113515601), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999998003, 1.17063266E-8, -0.190575868, -0.981672466, 2.27259456E-9, 0.981672466, -0.190575868, 1, 0, 1.19248806E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.422616452, 1.29261518, 0.573506117, 0.170305192, 0.123224631, 0.977656305, -0.01460368, 0.992356896, -0.12253359, -0.985283136, 0.00659072585, 0.17080307), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.137885556, -0.232796192, -2.98703575, 0.99993819, -0.0109509788, 0.00193095196, 0, -0.173648074, -0.98480773, 0.0111199152, 0.984746873, -0.173637345), 0.1)
+  end
+  if Jump then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 1, 0, 0, 0, 0.999809384, 0.0195245892, 0, -0.0195245892, 0.999809384), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0.354640692, 1, 0, 0, 0, 0.971257269, 0.238032162, 0, -0.238032162, 0.971257269), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 0.945077062, -0.326847643, 0, 0.326847643, 0.945077062, 0, 0, 0, 1), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 0, 0.972918272, 0.231149331, 0, -0.231149331, 0.972918272, 0, 0, 0, 1), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999997854, 1.19248806E-8, 0, -1, -0.394723415, 0.918799996, -4.70702943E-9, 0.918799996, 0.394723415, 1.09565805E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000024, 0.0999997854, -2.98023224E-8, 0, 1, -0.685107172, 0.728442311, -2.04177848E-8, -0.728442311, -0.685107172, -2.17092726E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003397, -0.0500001907, -2.25000024, 1, 0, 0, 0, -0.970793724, 0.239915878, 0, -0.239915878, -0.970793724), 0.1)
+  end
+  if Fall then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 0.140570328, 0.0856801346, 1, 0, 0, 0, 0.987040997, -0.160468459, 0, 0.160468459, 0.987040997), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2.15854931, -0.297423929, 1, 0, 0, 0, 0.941099346, -0.338130146, 0, 0.338130146, 0.941099346), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999821, 1.19999993, 0, 0.842323005, -0.538973093, 0, 0.538973093, 0.842323005, 0, 0, 0, 1), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000014, 0, 0.853645027, 0.520855248, 0, -0.520855248, 0.853645027, 0, 0, 0, 1), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999997258, 1.19248806E-8, 0, -1, 0.646548152, 0.762873232, 7.71000952E-9, 0.762873232, -0.646548152, 9.0971719E-9), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000024, 0.0999997854, -2.98023224E-8, 0, 1, 0.472365499, 0.881402791, 1.40775889E-8, -0.881402791, 0.472365499, -2.62678501E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003397, -0.0500001907, -2.25000048, 1, 0, 0, 0, -0.964218318, -0.26510942, 0, 0.26510942, -0.964218318), 0.1)
+  end
+  if Swim then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 1, 0, 0, 0, 0.0130096143, 0.999915361, 0, -0.999915361, 0.0130096143), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 0, 1, 0, 0, 0, 0.171573877, 0.985171258, 0, -0.985171258, 0.171573877), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999998003, 1.11257217E-8, -0.359918147, -0.932983875, 4.29198099E-9, 0.932983875, -0.359918147, 1, 0, 1.19248806E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000012, 0.0999998078, -2.73294471E-8, 0.398831874, 0.917024076, 1.18861161E-8, 0.917024076, -0.398831874, -1, 0, -2.98023224E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500004292, -0.0500001907, -2.25000024, 0.0531233251, 1.50782597E-7, -0.998587966, 0, -1, -1.50995803E-7, -0.998587966, 8.02139954E-9, -0.0531233251), 0.1)
+  end
+  if Stun then
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 1, 0, 0, 0, 0.991637945, 0.129051074, 0, -0.129051074, 0.991637945), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, -0.317496091, 1, 0, 0, 0, 0.937260449, -0.348629981, 0, 0.348629981, 0.937260449), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(1.32511818, 1.23220587, -0.269096613, 0.191464201, 0.0234036446, 0.981220543, -0.966997921, 0.175714582, 0.184497759, -0.16809693, -0.984162807, 0.0562742911), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-0.999999881, 1.10000014, 5.96046448E-8, 0.445352584, 0.894431114, 0.0406699777, -0.744608104, 0.344763577, 0.571573973, 0.497211993, -0.28483516, 0.81954205), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, -0.875998139, 0.871472597, 1.19248806E-8, 0, -1, -0.29225865, 0.9563393, -3.4851495E-9, 0.9563393, 0.29225865, 1.14042322E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000012, 0.0999997854, -2.98023224E-8, 0, 1, -0.973370552, 0.229237422, -2.9008703E-8, -0.229237422, -0.973370552, -6.83180756E-9), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.295231134, -0.0896856785, -3.013381, 0.993764818, -0.11148864, 0.00133156171, 0, -0.0119426232, -0.999928713, 0.11149659, 0.993693948, -0.0118681584), 0.1)
+  end
+  if attack1anim then
+    Walk = false
+    Idle = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 0.976390839, 0, 0.216011316, -0.0521910749, 0.970372796, 0.235908419, -0.209611505, -0.241612688, 0.947463095), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0.221922725, 0.946484566, -0.0606112182, 0.317006797, 0, 0.982207954, 0.187796667, -0.322749168, -0.177746654, 0.929644644), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.19999993, 0, 0.957241654, -0.0439640284, 0.285929352, -0.289289534, -0.14547433, 0.946123004, 0, -0.988384724, -0.151972413), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 5.96046448E-8, 0.897567451, -0.170246109, 0.406680375, 0, -0.922434688, -0.386153191, 0.44087714, 0.346598536, -0.827947378), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999997854, 1.19248806E-8, 0, -1, -0.326364577, 0.945243955, -3.89185884E-9, 0.945243955, 0.326364577, 1.12719212E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000012, 0.0999997854, -2.98023224E-8, 0, 1, -0.85508275, 0.518491566, -2.54834518E-8, -0.518491566, -0.85508275, -1.54522528E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003397, -0.0500001907, -2.25000024, 1, 0, 0, 0, -0.804958403, -0.593331218, 0, 0.593331218, -0.804958403), 0.1)
+  end
+  if attack2anim then
+    Walk = false
+    Idle = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(9.31322575E-10, 9.53674316E-7, 0.0600004159, 0.985023201, -0.0433071814, -0.166894391, 0, 0.967942953, -0.251170099, 0.172421724, 0.247408375, 0.953446269), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0.167388245, 0.987812996, 0.0467427038, 0.148460835, -0.0514925085, 0.998272002, 0.0283107162, -0.146880984, -0.0356103182, 0.988512993), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 0.992249846, -0.124258615, 0, 0.0081219878, 0.0648569986, -0.997861505, 0.12399289, 0.990127921, 0.0653635785), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 0, 1, 0, 0, 0, 0.602311254, 0.798261344, 0, -0.798261344, 0.602311254), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.07111943, 1.1154145, 1.19248806E-8, 0, -1, -0.0638514161, 0.997959375, -7.61420538E-10, 0.997959375, 0.0638514161, 1.19005463E-8), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000024, 0.0999998003, -0.262153596, 0.326873451, 0.907980859, 0.0906718224, 0.945068121, -0.314045995, -0.960757077, 0, -0.277391225), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003099, -0.0500003099, -2.25, 0.892135501, -0.288386256, -0.347746462, 0.123634741, -0.584507048, 0.801913977, -0.434521228, -0.7584095, -0.485804915), 0.1)
+  end
+  Head.BrickColor = BrickColor.new("Lime green")
+  Torso.BrickColor = BrickColor.new("Lime green")
+  RightArm.BrickColor = BrickColor.new("Lime green")
+  RightLeg.BrickColor = BrickColor.new("Lime green")
+  LeftLeg.BrickColor = BrickColor.new("Lime green")
+  LeftArm.BrickColor = BrickColor.new("Lime green")
+  if ShieldAnim then
+    Idle = false
+    Walk = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(0, 9.53674316E-7, 0.0600004196, 1, 0, 0, 0, 0.98480773, -0.173648179, 0, 0.173648179, 0.98480773), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.19999993, 0, 0.173648223, -0.171010077, 0.969846249, -0.92541647, -0.365159512, 0.101305708, 0.336824298, -0.915103316, -0.221664846), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-0.999999881, 1.10000026, 1.1920929E-7, 0.342020154, -0.163175866, -0.925416529, 0.88302213, 0.392633498, 0.257119954, 0.321393758, -0.905103564, 0.27837652), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25, -0.139640406, -2.98023224E-8, 0, 1, -0.173648149, 0.98480773, -5.17511811E-9, -0.98480773, -0.173648149, -2.93495575E-8), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25, 0.617427528, 1.19248806E-8, 0, -1, 0.173648149, 0.98480773, 2.07073336E-9, 0.98480773, -0.173648149, 1.17437144E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003099, -0.0500001311, -2.25000048, 0.866025388, 0.0868240595, -0.492403895, -0.0868240893, -0.94373244, -0.319109082, -0.492403865, 0.319109082, -0.809757829), 0.1)
+  end
+  if GobackAnim then
+    Idle = false
+    Walk = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(-1.86264515E-9, 9.53674316E-7, 0.0600004122, 0.939692557, -0.171010166, 0.296198308, 0, 0.866025329, 0.49999997, -0.342020363, -0.469846249, 0.813797534), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999881, 1.20000005, 0, 1, 0, 0, 0, 0.173648149, 0.98480773, 0, -0.98480773, 0.173648149), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-1, 1.10000002, 0, 0.92541647, 0.229499027, 0.301553518, 0.163175896, -0.959533155, 0.229499057, 0.342020363, -0.163175955, -0.925416529), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.588353217, 1.43749976, 0.0999997854, 0.111618891, 0.133022204, 0.98480773, 0.633022368, 0.754406393, -0.173648164, -0.766044319, 0.642787755, -2.28298997E-8), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999998003, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003397, -0.0500001907, -2.25000024, 1, 0, 0, 0, -1, -1.50995803E-7, 0, 1.50995803E-7, -1), 0.1)
+  end
+  if SmackGroundAnim then
+    Idle = false
+    Walk = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    RJ.C0 = RJ.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RJ.C1 = RJ.C1:lerp(CFrame.new(-0.0923062563, 0.225087255, 0.411810458, 0.939692557, -0.11697793, -0.321393996, -0.11697793, 0.773098826, -0.623405576, 0.321393996, 0.623405576, 0.712791383), 0.1)
+    NK.C0 = NK.C0:lerp(CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    NK.C1 = NK.C1:lerp(CFrame.new(0, -2, 0, 0.939692616, 0, 0.342020124, 0, 1, 0, -0.342020124, 0, 0.939692616), 0.1)
+    LS.C0 = LS.C0:lerp(CFrame.new(-1.50000012, 0.700000048, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    LS.C1 = LS.C1:lerp(CFrame.new(0.999999762, 1.20000005, 0, 0.742043018, -0.6682868, -0.0525814891, 0.454874098, 0.559585989, -0.692786396, 0.492403865, 0.490159392, 0.719223261), 0.1)
+    RS.C0 = RS.C0:lerp(CFrame.new(1.5, 0.699999988, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    RS.C1 = RS.C1:lerp(CFrame.new(-0.99999994, 1.10000002, 0, 0.883022189, 0.281014621, -0.375902265, -0.321393788, 0.945729494, -0.0479753017, 0.342020124, 0.163175911, 0.925416529), 0.1)
+    RH.C0 = RH.C0:lerp(CFrame.new(1.20000005, -1.5, -0.100000001, -2.98023224E-8, 0, 1, 0, 1, 0, -1, 0, -2.98023224E-8), 0.1)
+    RH.C1 = RH.C1:lerp(CFrame.new(0.5, 1.25000024, 0.0999997258, -0.133022249, -0.0610869005, 0.989228666, -0.754406512, 0.65355891, -0.0610869303, -0.642787635, -0.754406512, -0.133022234), 0.1)
+    LH.C0 = LH.C0:lerp(CFrame.new(-1.20000005, -1.5, -0.100000016, 1.19248806E-8, 0, -1, 0, 1, 0, 1, 0, 1.19248806E-8), 0.1)
+    LH.C1 = LH.C1:lerp(CFrame.new(-0.5, 1.25000012, 0.0999997854, 1.19248806E-8, 0, -1, -0.342020124, 0.939692616, -4.07854905E-9, 0.939692616, 0.342020124, 1.12057226E-8), 0.1)
+    CB.C0 = CB.C0:lerp(CFrame.new(-0.400000006, -2.0999999, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1), 0.1)
+    CB.C1 = CB.C1:lerp(CFrame.new(-0.0500003695, -0.0500001907, -2.25000072, 0.984807789, 0.0301536433, -0.171009868, 0, -0.984807789, -0.173648119, -0.17364797, 0.171010017, -0.969846368), 0.1)
+  end
+end)
+Idle = true
+function onWalk(spd)
+  if spd >= 1.0E-4 then
+    Walk = true
+    Idle = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+  else
+    Walk = false
+    Idle = true
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+  end
+end
+function onJump()
+  Walk = false
+  Idle = false
+  Jump = true
+  Fall = false
+  Swim = false
+  Stun = false
+  wait(0.25)
+  Fall = true
+  Jump = false
+end
+function onFall()
+  wait(0.25)
+  Walk = false
+  Idle = false
+  Jump = false
+  Fall = true
+  Swim = false
+  Stun = false
+end
+function onSwim()
+  Walk = false
+  Idle = false
+  Jump = false
+  Fall = false
+  Swim = true
+  Stun = false
+end
+function onStunned()
+  Walk = false
+  Idle = false
+  Jump = false
+  Fall = false
+  Swim = false
+  Stun = true
+end
+function doattack1()
+  if AttackPress == false then
+    AttackPress = true
+    print("Attacking")
+    Humanoid.WalkSpeed = 20
+    Humanoid.JumpPower = 120
+    Walk = false
+    Idle = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    wait(0.1)
+    attack1anim = true
+    attack2anim = false
+    wait(0.25)
+    attack1anim = false
+    attack2anim = true
+    SmashinClub.Transparency = 1
+    do
+      local newclub = SmashinClub:Clone()
+      newclub.Position = RightArm.Position
+      newclub.Parent = workspace
+      newclub.Transparency = 0
+      newclub.Anchored = false
+      local targetpos = Instance.new("Part")
+      targetpos.Anchored = true
+      targetpos.Size = Vector3.new(0, 0, 0)
+      targetpos.Parent = workspace
+      targetpos.CFrame = Mouse.Hit
+      targetpos.Name = "Target"
+      targetpos.CanCollide = false
+      targetpos.Transparency = 1
+      newclub.Position = targetpos.Position
+      local explosion = Instance.new("Explosion", newclub)
+      explosion.BlastPressure = 0
+      explosion.BlastRadius = 2
+      explosion.DestroyJointRadiusPercent = 0
+      explosion.Position = newclub.Position
+      function soundeffect()
+        local soundeff = Instance.new("Sound", newclub)
+        soundeff.SoundId = "rbxassetid://320242352"
+        soundeff.Volume = 1
+        soundeff:Play()
+        soundeff.Ended:connect(function()
+          soundeff:Destroy()
+        end)
+      end
+      soundeffect()
+      newclub.Touched:connect(function(part)
+        local plr = part.Parent
+        local hum = plr.Humanoid
+        if hum then
+          plr:BreakJoints()
+          hum.Health = 0
+        end
+      end)
+      wait(0.5)
+      Idle = true
+      targetpos:Destroy()
+      repeat
+        wait()
+        SmashinClub.Transparency = SmashinClub.Transparency - 0.025
+      until SmashinClub.Transparency <= 0
+      newclub:Destroy()
+      attack2anim = false
+      attack1anim = false
+      Humanoid.WalkSpeed = 16
+      Humanoid.JumpPower = 50
+      AttackPress = false
+      attack2anim = false
+      attack1anim = false
+      Idle = true
+    end
+  else
+    print("Aw you cant attack yet ;(")
+    Humanoid.Health = Humanoid.Health - 4
+  end
+end
+SmashinClub.Anchored = false
+function Shielded()
+  if AttackPress == false then
+    AttackPress = true
+    AttackClick = true
+    Humanoid.WalkSpeed = 0
+    Humanoid.JumpPower = 0
+    Idle = false
+    Walk = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    wait(0.1)
+    ShieldAnim = true
+    local Shieldstuf = Instance.new("ForceField", Character)
+    local YEYYE = Instance.new("ScreenGui")
+    local YOOGE = Instance.new("Frame")
+    local Text1 = Instance.new("TextLabel")
+    local Text2 = Instance.new("TextLabel")
+    local Num = Instance.new("TextLabel")
+    YEYYE.Name = "YEYYE"
+    YEYYE.Parent = Player_UI
+    YOOGE.Name = "YOOGE"
+    YOOGE.Parent = YEYYE
+    YOOGE.BackgroundColor3 = Color3.new(1, 1, 1)
+    YOOGE.Draggable = true
+    YOOGE.Position = UDim2.new(0.623232305, 0, 0.468899518, 0)
+    YOOGE.Size = UDim2.new(0.304040402, 0, 0.270334929, 0)
+    YOOGE.Style = Enum.FrameStyle.DropShadow
+    Text1.Name = "Text1"
+    Text1.Parent = YOOGE
+    Text1.BackgroundColor3 = Color3.new(0, 0, 0)
+    Text1.BackgroundTransparency = 1
+    Text1.Position = UDim2.new(0.0166112948, 0, 0.345132738, 0)
+    Text1.Size = UDim2.new(0.455149502, 0, 0.309734523, 0)
+    Text1.ZIndex = 2
+    Text1.Font = Enum.Font.SourceSans
+    Text1.Text = "You have "
+    Text1.TextColor3 = Color3.new(1, 1, 1)
+    Text1.TextScaled = true
+    Text1.TextStrokeTransparency = 0
+    Text1.TextWrapped = true
+    Text2.Name = "Text2"
+    Text2.Parent = YOOGE
+    Text2.BackgroundColor3 = Color3.new(0, 0, 0)
+    Text2.BackgroundTransparency = 1
+    Text2.Position = UDim2.new(0.581395328, 0, 0.14159292, 0)
+    Text2.Size = UDim2.new(0.398671091, 0, 0.743362844, 0)
+    Text2.ZIndex = 2
+    Text2.Font = Enum.Font.SourceSans
+    Text2.Text = "Seconds Until your shield goes"
+    Text2.TextColor3 = Color3.new(1, 1, 1)
+    Text2.TextScaled = true
+    Text2.TextStrokeTransparency = 0
+    Text2.TextWrapped = true
+    Num.Name = "Num"
+    Num.Parent = YOOGE
+    Num.BackgroundColor3 = Color3.new(0, 0, 0)
+    Num.BackgroundTransparency = 1
+    Num.Position = UDim2.new(0.405315608, 0, 0.300884962, 0)
+    Num.Size = UDim2.new(0.239999995, 0, 0.370000005, 0)
+    Num.ZIndex = 2
+    Num.Font = Enum.Font.SourceSans
+    Num.Text = "5"
+    Num.TextColor3 = Color3.new(1, 1, 1)
+    Num.TextScaled = true
+    Num.TextStrokeTransparency = 0
+    Num.TextWrapped = true
+    for i = 5, 0, -1 do
+      wait(1)
+      Num.Text = tostring(Num.Text - 1)
+      if 0 >= tonumber(Num.Text) then
+        YEYYE:Destroy()
+        Shieldstuf:Destroy()
+        break
+      end
+    end
+    Idle = true
+    ShieldAnim = false
+    Humanoid.WalkSpeed = 20
+    Humanoid.JumpPower = 50
+    AttackClick = false
+    AttackPress = false
+  else
+    print("Please wait till you can use your shield ", Player.Name)
+  end
+end
+function SoundCLANGClub()
+  local soundeff = Instance.new("Sound", SmashinClub)
+  soundeff.Pitch = 1
+  soundeff.Volume = 2
+  soundeff.SoundId = id .. "319998195"
+  soundeff:Play()
+  soundeff.Ended:connect(function()
+    soundeff:Destroy()
+  end)
+end
+function CLUBSMACKBOIIII()
+  if AttackPress == false then
+    AttackPress = true
+    AttackClick = true
+    print("Attacking!")
+    Idle = false
+    Walk = false
+    Jump = false
+    Fall = false
+    Swim = false
+    Stun = false
+    Humanoid.WalkSpeed = 0
+    Humanoid.JumpPower = 120
+    wait(0.1)
+    GobackAnim = true
+    SmackGroundAnim = false
+    wait(0.3)
+    GobackAnim = false
+    SmackGroundAnim = true
+    SoundCLANGClub()
+    Root.Anchored = true
+    local function DESTROYALLNEARBY()
+      function touchedmyClub(part)
+        if AttackPress == true then
+          local plr = part.Parent
+          local hum = plr.Humanoid
+          if hum then
+            if plr.Name == Player.Name then
+              print("Sorry Master")
+            else
+              local bodyvel = Instance.new("BodyVelocity")
+              bodyvel.MaxForce = Vector3.new(0, 8000, 0)
+              bodyvel.P = 1250
+              bodyvel.Velocity = Vector3.new(1, 4, 1)
+              hum.PlatformStand = true
+              hum.Health = hum.Health - 0.7
+              wait(0.2)
+              bodyvel:Destroy()
+            end
+          end
+        end
+      end
+      SmashinClub.Touched:connect(touchedmyClub)
+      local explogen = Instance.new("Explosion", SmashinClub)
+      explogen.BlastPressure = 700000
+      explogen.DestroyJointRadiusPercent = 0
+      explogen.ExplosionType = Enum.ExplosionType.CratersAndDebris
+      explogen.BlastRadius = 2
+      explogen.Position = SmashinClub.Position
+      explogen.Hit:connect(function(plr)
+        local checkplr = plr.Parent
+        local checkplrhum = checkplr.Humanoid
+        if checkplrhum then
+          if checkplr.Name == Player.Name then
+            print("SORRY!!")
+          else
+            local bodyvel = Instance.new("BodyVelocity")
+            bodyvel.MaxForce = Vector3.new(0, 8000, 0)
+            bodyvel.P = 1250
+            bodyvel.Velocity = Vector3.new(2, 4, 2)
+            checkplrhum.PlatformStand = true
+            checkplrhum.Health = checkplrhum.Health - 0.9
+            wait(0.2)
+            bodyvel:Destroy()
+          end
+        end
+      end)
+    end
+    wait(0.2)
+    DESTROYALLNEARBY()
+    wait(0.5)
+    GobackAnim = false
+    SmackGroundAnim = false
+    Idle = true
+    Root.Anchored = false
+    AttackClick = false
+    AttackPress = false
+    Humanoid.WalkSpeed = 20
+    Humanoid.JumpPower = 50
+  else
+    print("Wait your turn..")
+  end
+end
+Mouse.KeyDown:connect(function(keky)
+  if keky == "e" then
+    doattack1()
+  elseif keky == "q" then
+    Shielded()
+  end
+end)
+Mouse.Button1Down:connect(function()
+  CLUBSMACKBOIIII()
+end)
+Suiscide.MouseButton1Down:connect(function()
+  Character:BreakJoints()
+  Suiscide.Text = "Rip " .. Player.Name
+end)
+Humanoid.Running:connect(onWalk)
+Humanoid.Jumping:connect(onJump)
+Humanoid.Swimming:connect(onSwim)
+Humanoid.PlatformStanding:connect(onStunned)
+Humanoid.Died:connect(function()
+  local function soundeffdead()
+    local soundeff = Instance.new("Sound", Head)
+    soundeff.SoundId = "rbxassetid://306323388"
+    soundeff.Volume = 1
+    soundeff.Pitch = 1.4
+    soundeff:Play()
+    print("Ded")
+  end
+  soundeffdead()
+  wait(2)
+  Player.Respawn()
+end)
