@@ -1,5 +1,5 @@
 --Morgana
-if GetObjectName(GetMyHero()) ~= "Alistar" then return end
+if GetObjectName(GetMyHero()) ~= "Morgana" then return end
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
  require('MixLib')
