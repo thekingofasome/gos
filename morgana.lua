@@ -1,5 +1,5 @@
 --Morgana
-if GetObjectName(GetMyHero()) ~= "Morgana" then return end
+if GetObjectName(GetMyHero()) ~= "Alistar" then return end
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
  require('MixLib')
@@ -36,7 +36,7 @@ local MorgQ = {delay = 0.25, range = 1175, radius = 65, speed = 1200}
 local MorgW = {delay = 0.25, range = 900, radius = 225, speed = math.huge}	
 
 OnDraw(function()
-	if MorgMenu.DW.ODR:Value() then
+	if MorgMenu.DW.DWR:Value() then
 
 		if Ready(_Q) and MorgMenu.DW.Q:Value() then
 			DrawCircle(myHero,GetCastRange(myHero,_Q),1,25,GoS.Blue)
