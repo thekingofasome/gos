@@ -16,9 +16,9 @@ AM.Combo:Boolean("E", "Use E", true)
 AM.Combo:Boolean("R", "Use R", true)
 
 AM:SubMenu("DW", "Drawings")
-AM.DW:Boolean("DQ", "Draw Q Range", true)
-AM.DW:Boolean("DW", "Draw W Range", true)
-AM.DW:Boolean("DE", "Draw E Range", true)
+AM.DW:Boolean("Q", "Draw Q Range", true)
+AM.DW:Boolean("W", "Draw W Range", true)
+AM.DW:Boolean("E", "Draw e Range", true)
 AM.DW:Boolean("DWR", "Draw WHen Skills Are Ready", true)
 
 OnDraw(function()
@@ -35,7 +35,7 @@ OnDraw(function()
 		if Ready(_E) and AM.DW.E:Value() then
 			DrawCircle(myHero,GetCastRange(myHero,_E),1,25,GoS.Green)
 		end
-		
+
 	else
 
 		if AM.DW.Q:Value() then
@@ -51,6 +51,7 @@ OnDraw(function()
 		end
 	end
 end)
+
 
 OnTick(function (myHero)
 
