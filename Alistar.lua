@@ -62,7 +62,7 @@ OnDraw(function()
 end)
 
 OnTick(function (myHero)
-	
+
 	local target = GetCurrentTarget()
 		
 	if MixLib:Mode() == "Combo" then
@@ -70,4 +70,4 @@ OnTick(function (myHero)
 			CastTargetSpell(target , _Q .. _W)
 		end
 	end
-end
+end)
