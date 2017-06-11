@@ -35,8 +35,7 @@ OnDraw(function()
 		if Ready(_E) and AM.DW.E:Value() then
 			DrawCircle(myHero,GetCastRange(myHero,_E),1,25,GoS.Green)
 		end
-
-
+		
 	else
 
 		if AM.DW.Q:Value() then
